@@ -10,7 +10,7 @@ const translations = {
         profile: {
             hello: "Hola, soy",
             title: "José Acosta",
-            role: "Ing. de Software Senior",
+            role: "Ing. en Sistemas Informáticos",
             country: "De Paraguay",
             cv_es: "Descargar CV español",
             cv_en: "Descargar CV inglés",
@@ -20,10 +20,10 @@ const translations = {
             get_to_know: "Conoceme más",
             title: "Sobre mí",
             experience: "Experiencia",
-            years: "13+ años <br>Desarrollo Full stack",
+            years: "13+ años <br>Desarrollo Fullstack",
             education: "Educación",
-            education_details: "Ingeniero en Software<br>Licenciado en Análisis de Sistemas.<br>Diplomados en Java y Android Programming",
-            text: "Ingeniero en Software, Licenciado en análisis de sistemas informáticos. Cursos de Ethical Hacking, Especialista en desarrollo Android, Diplomado en Java Programming"
+            education_details: "Ingeniero en Sistemas Informáticos<br>Licenciado en Análisis de Sistemas<br>Diplomados en programación Java y Android",
+            text: "Ingeniero en Sistemas Informáticos, Licenciado en análisis de sistemas informáticos. Cursos de Ethical Hacking, Especialista en desarrollo Android, Diplomado en Programación Java"
         },
         experience: {
             explore: "Explora mi",
@@ -31,7 +31,7 @@ const translations = {
             frontend: "Desarrollo Frontend",
             backend: "Desarrollo Backend",
             others: "Otras habilidades",
-            fullstack: "Desarrollador Full Stack con más de 12 años de experiencia en desarrollo de sistemas informáticos Desktop/web (FrontEnd y BackEnd), APIS, aplicaciones móviles Android, páginas web, gestión de bases de datos, servidores, control de versiones, gestión de actividades de programadores y consultoría en Ethical Hacking.",
+            fullstack: "Desarrollador Full Stack con más de 13 años de experiencia en desarrollo de sistemas informáticos Desktop/web (FrontEnd y BackEnd), APIS, aplicaciones móviles Android, páginas web, gestión de bases de datos, servidores, control de versiones, gestión de actividades de programadores y consultoría en Ethical Hacking.",
             experienced: "Avanzado",
             intermediate: "Intermedio"
         },
@@ -65,9 +65,9 @@ const translations = {
             get_to_know: "Get to know More",
             title: "About Me",
             experience: "Experience",
-            years: "13+ years <br>Full stack Development",
+            years: "13+ years <br>Fullstack Development",
             education: "Education",
-            education_details: "Software Engineer<br>Bachelor's Degree in Systems Analysis.<br>Diplomas in Java and Android Programming",
+            education_details: "Software Engineer<br>Bachelor's Degree in Systems Analysis<br>Diplomas in Java and Android Programming",
             text: "Software Engineer, Graduate in computer systems analysis. Ethical Hacking Courses, Android Development Specialist, Diploma in Java Programming"
         },
         experience: {
@@ -76,7 +76,7 @@ const translations = {
             frontend: "Frontend Development",
             backend: "Backend Development",
             others: "Others Skills",
-            fullstack: "Full Stack Developer with more than 12 years of experience in developing Desktop/web computer systems (FrontEnd and BackEnd) APIS, Android mobile applications, Web pages, Database management, servers, version control, management of activities of programmers and Ethical Hacking consultancy.",
+            fullstack: "Full Stack Developer with more than 13 years of experience in developing Desktop/web computer systems (FrontEnd and BackEnd) APIS, Android mobile applications, Web pages, Database management, servers, version control, management of activities of programmers and Ethical Hacking consultancy.",
             experienced: "Experienced",
             intermediate: "Intermediate"
         },
@@ -135,7 +135,7 @@ function updateTexts() {
     document.querySelector('.section__text__p1').textContent = translations[currentLang].profile.hello;
     document.querySelector('#profile .title').textContent = translations[currentLang].profile.title;
     document.querySelector('.section__text__p2').textContent = translations[currentLang].profile.role;
-    document.querySelector('.section__text__p3').textContent = translations[currentLang].profile.country;
+    document.querySelector('.section__text__p3').innerHTML = translations[currentLang].profile.country + ' <span class="flag">🇵🇾</span><span class="typewriter-cursor">|</span>';
     // CV buttons
     const btns = document.querySelectorAll('.btn-container .btn-color-2');
     if (btns.length >= 2) {

@@ -19,18 +19,10 @@
   font-size: 1.25rem;
   margin-left: 0.25rem;
 }
-  overflow: hidden;
-  border-right: .15em solid var(--primary-color);
-  white-space: nowrap;
-  animation: typing 2.2s steps(30, end), blink-caret .75s step-end infinite;
-}
 
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
 
-/* Eliminado keyframes duplicados para blink-caret */
+
+
 /* Alinear a la izquierda los textos de experiencia en los artículos */
 .article-container article div {
   text-align: left;
