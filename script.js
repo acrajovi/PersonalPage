@@ -1,3 +1,39 @@
+// Efecto typewriter con cursor parpadeante y bandera al final
+function typeWriterEffect(element, text, speed = 50, flag = null, callback) {
+    element.innerHTML = '';
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            element.innerHTML = text.substring(0, i + 1) + '<span class="typewriter-cursor">|</span>';
+            i++;
+            setTimeout(type, speed);
+        } else {
+            // Al terminar, mostrar bandera si corresponde
+            let finalText = text;
+            if (flag) finalText += ' <span class="flag">🇵🇾</span>';
+            element.innerHTML = finalText;
+            if (callback) callback();
+        }
+    }
+    type();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const p2 = document.querySelector('.section__text__p2');
+    const p3 = document.querySelector('.section__text__p3');
+    if (p2) p2.textContent = '';
+    if (p3) p3.textContent = '';
+    if (p2) {
+        typeWriterEffect(p2, p2.getAttribute('data-original') || '', 45, null, function() {
+            if (p3) {
+                typeWriterEffect(p3, p3.getAttribute('data-original') || '', 45, false, function() {
+                    // Al terminar, agregar bandera y cursor único
+                    p3.innerHTML = p3.getAttribute('data-original') + ' <span class="flag">🇵🇾</span><span class="typewriter-cursor">|</span>';
+                });
+            }
+        });
+    }
+});
 // Traducción movida a translation.js
 /* Copyright José Acosta. All Rights Reserved. */
 
