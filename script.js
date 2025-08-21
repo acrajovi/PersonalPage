@@ -1,3 +1,4 @@
+// Traducción movida a translation.js
 /* Copyright José Acosta. All Rights Reserved. */
 
 // Navigation toggle for mobile

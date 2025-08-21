@@ -27,10 +27,10 @@
         <div class="my-name"><a href="#" class="no-underline">José Acosta</a></div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="#profile">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a id="nav-home" href="#profile">Home</a></li>
+                    <li><a id="nav-about" href="#about">About</a></li>
+                    <li><a id="nav-experience" href="#experience">Experience</a></li>
+                    <li><a id="nav-contact" href="#contact">Contact</a></li>
                     <li>
                       <button onclick="toggleDarkMode()" class="theme-toggle">
                         <svg width="24" height="24" id="light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -41,6 +41,14 @@
                           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                         </svg>
                       </button>
+                    </li>
+                    <li>
+                      <div class="switch">
+                        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" onchange="toggleLanguage()">
+                        <label for="language-toggle"></label>
+                        <span class="on">EN</span>
+                        <span class="off">ES</span>
+                      </div>
                     </li>
                 </ul>
             </div>
@@ -68,6 +76,14 @@
                           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
                         </svg>
                       </button>
+                    </li>
+                    <li class="center">
+                      <div class="switch">
+                        <input id="language-toggle-mobile" class="check-toggle check-toggle-round-flat" type="checkbox" onchange="toggleLanguage()">
+                        <label for="language-toggle-mobile"></label>
+                        <span class="on">EN</span>
+                        <span class="off">ES</span>
+                      </div>
                     </li>
                 </div>
             </div>
@@ -107,11 +123,7 @@
                   <img src="./assets/playStorel.png" alt="My Play Store profile" class="icon" onclick="window.open('https://play.google.com/store/apps/dev?id=6375143936309552759', '_blank')">
               </div>              
             </div>
-            <img src="./assets/arrow.png" 
-              alt="Arrow icon" 
-              class="icon arrow-first" 
-              onclick="location.href='./#about'"
-              />
+            <!-- Arrow icon eliminado -->
         </section>
         <section id="about">
             <p class="section__text__p1">Get to know More</p>
@@ -155,11 +167,7 @@
                     </div>
                 </div>
             </div>
-            <img src="./assets/arrow.png" 
-            alt="Arrow icon" 
-            class="icon arrow" 
-            onclick="location.href='./#experience'"
-            />
+            <!-- Arrow icon eliminado -->
         </section>
         <section id="experience">
             <p class="section__text__p1">Explore My</p>
@@ -382,7 +390,7 @@
               </div>
               <div class="text-container">
                 <p>Full Stack
-                  Developer with more than 12 years
+                  Developer with more than 13 years
                   of experience in developing
                   Desktop/web computer systems
                   (FrontEnd and BackEnd) APIS,
@@ -394,12 +402,7 @@
                   consultancy.</p>
               </div>
             </div>
-            <img
-              src="./assets/arrow.png"
-              alt="Arrow icon"
-              class="icon arrow"
-              onclick="location.href='./#contact'"
-            />
+            <!-- Arrow icon eliminado -->
           </section>
           <section id="contact">
             <p class="section__text__p1">Get in Touch</p>
@@ -436,6 +439,7 @@
             </nav>
             <p>Copyright &#169; <span id="currentYear"></span> José Acosta. All Rights Reserved.</p>
           </footer>
+  <script src="translation.js?v=20250820"></script>
   <script src="script.js?v=20250820"></script>
         <!-- Botón para volver al inicio -->
       <button id="back-to-top" class="back-to-top" title="Volver al inicio">

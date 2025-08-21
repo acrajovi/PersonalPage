@@ -28,13 +28,7 @@
     .section-container {
       display: block;
     }
-    .arrow,
-    .arrow-first {
-      display: none !important;
-    }
-    #back-to-top {
-      display: block !important;
-    }
+  /* Arrow eliminado */
     section,
     .section-container {
       height: fit-content;
