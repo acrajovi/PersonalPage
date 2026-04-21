@@ -1,4 +1,3 @@
-// Traducciones simples
 const translations = {
     es: {
         nav: {
@@ -9,40 +8,34 @@ const translations = {
         },
         profile: {
             hello: "Hola, soy",
-            title: "José Acosta",
             role: "Ing. en Sistemas Informáticos",
             country: "De Paraguay",
-            cv_es: "Descargar CV español",
-            cv_en: "Descargar CV inglés",
-            contact_info: "Contacto"
+            cv_es: "Descargar CV (ES)",
+            cv_en: "Descargar CV (EN)",
+            contact_btn: "Contáctame"
         },
         about: {
-            get_to_know: "Conoceme más",
+            get_to_know: "Conóceme más",
             title: "Sobre mí",
             experience: "Experiencia",
-            years: "13+ años <br>Desarrollo Fullstack",
+            years: "13+ años<br>Desarrollo Fullstack",
             education: "Educación",
-            education_details: "Ingeniero en Sistemas Informáticos<br>Licenciado en Análisis de Sistemas<br>Diplomados en programación Java y Android",
-            text: "Ingeniero en Sistemas Informáticos, Licenciado en análisis de sistemas informáticos. Cursos de Ethical Hacking, Especialista en desarrollo Android, Diplomado en Programación Java"
+            education_details: "Ingeniero en Sistemas<br>Lic. en Análisis de Sistemas<br>Diplomados en Java y Android",
+            text: "Ingeniero en Sistemas Informáticos con más de 13 años de experiencia. Especialista en desarrollo Android, programación Java, Ethical Hacking y soluciones Full Stack."
         },
         experience: {
             explore: "Explora mi",
             title: "Experiencia",
-            frontend: "Desarrollo Frontend",
-            backend: "Desarrollo Backend",
-            others: "Otras habilidades",
-            fullstack: "Desarrollador Full Stack con más de 13 años de experiencia en desarrollo de sistemas informáticos Desktop/web (FrontEnd y BackEnd), APIS, aplicaciones móviles Android, páginas web, gestión de bases de datos, servidores, control de versiones, gestión de actividades de programadores y consultoría en Ethical Hacking.",
-            experienced: "Avanzado",
+            frontend: "Frontend",
+            backend: "Backend",
+            others: "Otras Habilidades",
+            fullstack: "Desarrollador Full Stack con más de 13 años de experiencia en desarrollo de sistemas Desktop/Web (Frontend y Backend), APIs, aplicaciones móviles Android, páginas web, gestión de bases de datos, servidores, control de versiones y consultoría en Ethical Hacking.",
+            experienced: "Experto",
             intermediate: "Intermedio"
         },
         contact: {
-            get_in_touch: "Contactame",
-            title: "Contacto",
-            linkedin: "LinkedIn"
-        },
-        footer: {
-            copyright: "Copyright © ",
-            rights: "José Acosta. Todos los derechos reservados."
+            get_in_touch: "Contáctame",
+            title: "Contacto"
         }
     },
     en: {
@@ -54,40 +47,34 @@ const translations = {
         },
         profile: {
             hello: "Hello, I'm",
-            title: "José Acosta",
             role: "Sr. Software Engineer",
             country: "From Paraguay",
-            cv_es: "Download CV spanish",
-            cv_en: "Download CV english",
-            contact_info: "Contact Info"
+            cv_es: "Download CV (ES)",
+            cv_en: "Download CV (EN)",
+            contact_btn: "Contact Me"
         },
         about: {
-            get_to_know: "Get to know More",
+            get_to_know: "Get to Know More",
             title: "About Me",
             experience: "Experience",
-            years: "13+ years <br>Fullstack Development",
+            years: "13+ years<br>Fullstack Development",
             education: "Education",
-            education_details: "Software Engineer<br>Bachelor's Degree in Systems Analysis<br>Diplomas in Java and Android Programming",
-            text: "Software Engineer, Graduate in computer systems analysis. Ethical Hacking Courses, Android Development Specialist, Diploma in Java Programming"
+            education_details: "Software Engineer<br>Bachelor's in Systems Analysis<br>Diplomas in Java & Android",
+            text: "Software Engineer with 13+ years of experience. Specialist in Android development, Java programming, Ethical Hacking, and Full Stack solutions."
         },
         experience: {
             explore: "Explore My",
             title: "Experience",
-            frontend: "Frontend Development",
-            backend: "Backend Development",
-            others: "Others Skills",
-            fullstack: "Full Stack Developer with more than 13 years of experience in developing Desktop/web computer systems (FrontEnd and BackEnd) APIS, Android mobile applications, Web pages, Database management, servers, version control, management of activities of programmers and Ethical Hacking consultancy.",
+            frontend: "Frontend",
+            backend: "Backend",
+            others: "Other Skills",
+            fullstack: "Full Stack Developer with more than 13 years of experience in Desktop/Web development (Frontend & Backend), APIs, Android mobile apps, web pages, database management, servers, version control, and Ethical Hacking consulting.",
             experienced: "Experienced",
             intermediate: "Intermediate"
         },
         contact: {
             get_in_touch: "Get in Touch",
-            title: "Contact Me",
-            linkedin: "LinkedIn"
-        },
-        footer: {
-            copyright: "Copyright © ",
-            rights: "José Acosta. All Rights Reserved."
+            title: "Contact Me"
         }
     }
 };
@@ -97,88 +84,103 @@ let currentLang = "en";
 function toggleLanguage() {
     currentLang = currentLang === "en" ? "es" : "en";
     updateTexts();
-    // Sincronizar ambos toggles
-    const desktopToggle = document.getElementById("language-toggle");
-    const mobileToggle = document.getElementById("language-toggle-mobile");
-    if (desktopToggle) desktopToggle.checked = currentLang === "es";
-    if (mobileToggle) mobileToggle.checked = currentLang === "es";
 }
 
 function updateTexts() {
-    // Sincronizar el estado del switch animado
     const desktopToggle = document.getElementById("language-toggle");
     const mobileToggle = document.getElementById("language-toggle-mobile");
     if (desktopToggle) desktopToggle.checked = currentLang === "es";
     if (mobileToggle) mobileToggle.checked = currentLang === "es";
+    
+    const t = translations[currentLang];
+    const isES = currentLang === "es";
+    
     // Desktop nav
-    document.getElementById("nav-home").textContent = translations[currentLang].nav.home;
-    document.getElementById("nav-about").textContent = translations[currentLang].nav.about;
-    document.getElementById("nav-experience").textContent = translations[currentLang].nav.experience;
-    document.getElementById("nav-contact").textContent = translations[currentLang].nav.contact;
+    const navLinks = document.querySelectorAll('#desktop-nav .nav-links a');
+    if (navLinks[0]) navLinks[0].textContent = t.nav.home;
+    if (navLinks[1]) navLinks[1].textContent = t.nav.about;
+    if (navLinks[2]) navLinks[2].textContent = t.nav.experience;
+    if (navLinks[3]) navLinks[3].textContent = t.nav.contact;
+    
     // Mobile nav
-    const mobileLinks = document.querySelectorAll('.menu-links a');
-    if (mobileLinks.length >= 4) {
-        mobileLinks[0].textContent = translations[currentLang].nav.home;
-        mobileLinks[1].textContent = translations[currentLang].nav.about;
-        mobileLinks[2].textContent = translations[currentLang].nav.experience;
-        mobileLinks[3].textContent = translations[currentLang].nav.contact;
-    }
+    const mobileLinks = document.querySelectorAll('#hamburger-nav .menu-links a');
+    if (mobileLinks[0]) mobileLinks[0].textContent = t.nav.home;
+    if (mobileLinks[1]) mobileLinks[1].textContent = t.nav.about;
+    if (mobileLinks[2]) mobileLinks[2].textContent = t.nav.experience;
+    if (mobileLinks[3]) mobileLinks[3].textContent = t.nav.contact;
+    
     // Footer nav
     const footerLinks = document.querySelectorAll('footer .nav-links a');
-    if (footerLinks.length >= 4) {
-        footerLinks[0].textContent = translations[currentLang].nav.home;
-        footerLinks[1].textContent = translations[currentLang].nav.about;
-        footerLinks[2].textContent = translations[currentLang].nav.experience;
-        footerLinks[3].textContent = translations[currentLang].nav.contact;
-    }
+    if (footerLinks[0]) footerLinks[0].textContent = t.nav.home;
+    if (footerLinks[1]) footerLinks[1].textContent = t.nav.about;
+    if (footerLinks[2]) footerLinks[2].textContent = t.nav.experience;
+    if (footerLinks[3]) footerLinks[3].textContent = t.nav.contact;
+    
     // Profile section
-    document.querySelector('.section__text__p1').textContent = translations[currentLang].profile.hello;
-    document.querySelector('#profile .title').textContent = translations[currentLang].profile.title;
-    document.querySelector('.section__text__p2').textContent = translations[currentLang].profile.role;
-    document.querySelector('.section__text__p3').innerHTML = translations[currentLang].profile.country + ' <span class="flag">🇵🇾</span><span class="typewriter-cursor">|</span>';
+    const profileP1 = document.querySelector('#profile .section__text__p1');
+    if (profileP1) profileP1.textContent = t.profile.hello;
+    
+    const profileP2 = document.querySelector('#profile .section__text__p2');
+    if (profileP2) profileP2.setAttribute('data-original', t.profile.role);
+    
+    const profileP3 = document.querySelector('#profile .section__text__p3');
+    if (profileP3) {
+        profileP3.setAttribute('data-original', t.profile.country);
+    }
+    
     // CV buttons
-    const btns = document.querySelectorAll('.btn-container .btn-color-2');
-    if (btns.length >= 2) {
-        btns[0].textContent = translations[currentLang].profile.cv_es;
-        btns[1].textContent = translations[currentLang].profile.cv_en;
-    }
-    // Contact Info button
-    const contactBtn = document.querySelector('.btn-container .btn-color-1');
-    if (contactBtn) contactBtn.textContent = translations[currentLang].profile.contact_info;
+    const cvButtons = document.querySelectorAll('#profile .btn-color-2');
+    if (cvButtons[0]) cvButtons[0].innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> ${t.profile.cv_es}`;
+    if (cvButtons[1]) cvButtons[1].innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg> ${t.profile.cv_en}`;
+    
+    const contactBtn = document.querySelector('#profile .btn-color-1');
+    if (contactBtn) contactBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> ${t.profile.contact_btn}`;
+    
     // About section
-    document.querySelector('#about .section__text__p1').textContent = translations[currentLang].about.get_to_know;
-    document.querySelector('#about .title').textContent = translations[currentLang].about.title;
-    document.querySelector('#about .details-container h3').textContent = translations[currentLang].about.experience;
-    document.querySelector('#about .details-container p').innerHTML = translations[currentLang].about.years;
-    const aboutDetails = document.querySelectorAll('#about .details-container');
-    if (aboutDetails.length > 1) {
-        aboutDetails[1].querySelector('h3').textContent = translations[currentLang].about.education;
-        aboutDetails[1].querySelector('p').innerHTML = translations[currentLang].about.education_details;
+    const aboutP1 = document.querySelector('#about .section__text__p1');
+    if (aboutP1) aboutP1.textContent = t.about.get_to_know;
+    
+    const detailCards = document.querySelectorAll('#about .detail-card');
+    if (detailCards[0]) {
+        detailCards[0].querySelector('h3').textContent = t.about.experience;
+        detailCards[0].querySelector('p').innerHTML = t.about.years;
     }
-    document.querySelector('#about .text-container p').textContent = translations[currentLang].about.text;
+    if (detailCards[1]) {
+        detailCards[1].querySelector('h3').textContent = t.about.education;
+        detailCards[1].querySelector('p').innerHTML = t.about.education_details;
+    }
+    
+    const aboutText = document.querySelector('#about .text-container p');
+    if (aboutText) aboutText.textContent = t.about.text;
+    
     // Experience section
-    document.querySelector('#experience .section__text__p1').textContent = translations[currentLang].experience.explore;
-    document.querySelector('#experience .title').textContent = translations[currentLang].experience.title;
+    const expP1 = document.querySelector('#experience .section__text__p1');
+    if (expP1) expP1.textContent = t.experience.explore;
+    
     const expTitles = document.querySelectorAll('#experience .experience-sub-title');
-    if (expTitles.length > 0) expTitles[0].textContent = translations[currentLang].experience.frontend;
-    if (expTitles.length > 1) expTitles[1].textContent = translations[currentLang].experience.backend;
-    if (expTitles.length > 2) expTitles[2].textContent = translations[currentLang].experience.others;
-    // Experience cards
-    const expCards = document.querySelectorAll('#experience .article-container article p');
-    expCards.forEach((p, i) => {
-        if (p.textContent === 'Experienced' || p.textContent === 'Avanzado') {
-            p.textContent = translations[currentLang].experience.experienced;
-        } else if (p.textContent === 'Intermediate' || p.textContent === 'Intermedio') {
-            p.textContent = translations[currentLang].experience.intermediate;
+    if (expTitles[0]) expTitles[0].textContent = t.experience.frontend;
+    if (expTitles[1]) expTitles[1].textContent = t.experience.backend;
+    if (expTitles[2]) expTitles[2].textContent = t.experience.others;
+    
+    // Skills
+    const skillItems = document.querySelectorAll('#experience .skill-item');
+    const skillLevels = ['Experienced', 'Experienced', 'Experienced', 'Experienced', 'Intermediate', 'Experienced', 'Experienced', 'Experienced', 'Experienced', 'Experienced', 'Intermediate', 'Intermediate', 'Experienced', 'Experienced', 'Experienced', 'Experienced', 'Experienced', 'Experienced'];
+    skillItems.forEach((item, i) => {
+        const p = item.querySelector('p');
+        if (p) {
+            p.textContent = skillLevels[i] === 'Experienced' ? t.experience.experienced : t.experience.intermediate;
         }
     });
-    document.querySelector('#experience .text-container p').textContent = translations[currentLang].experience.fullstack;
+    
+    const expText = document.querySelector('#experience .experience-text p');
+    if (expText) expText.textContent = t.experience.fullstack;
+    
     // Contact section
-    document.querySelector('#contact .section__text__p1').textContent = translations[currentLang].contact.get_in_touch;
-    document.querySelector('#contact .title').textContent = translations[currentLang].contact.title;
-    document.querySelector('#contact .contact-info-container a[href*="linkedin"]').textContent = translations[currentLang].contact.linkedin;
-    // Footer
-    document.querySelector('footer p').innerHTML = translations[currentLang].footer.copyright + '<span id="currentYear"></span> ' + translations[currentLang].footer.rights;
+    const contactP1 = document.querySelector('#contact .section__text__p1');
+    if (contactP1) contactP1.textContent = t.contact.get_in_touch;
+    
+    const contactTitle = document.querySelector('#contact .title');
+    if (contactTitle) contactTitle.textContent = t.contact.title;
 }
 
 document.addEventListener('DOMContentLoaded', function() {

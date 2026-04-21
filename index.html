@@ -1,454 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Copyright José Acosta. All Rights Reserved.  -->
-    <meta name="date-created" content="2023-10-29">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José  Acosta</title>
-  <link rel="stylesheet" id="dynamic-styles-1" href="style.css?v=20250821">
-  <link rel="stylesheet" id="dynamic-styles-2" href="mediaqueries.css?v=20250821">
+    <title>José Acosta | Software Engineer</title>
+    <link rel="stylesheet" href="./style.css?v=1">
+    <link rel="stylesheet" href="./mediaqueries.css?v=1">
     <link rel="icon" type="image/png" href="./assets/favicon.png">
-  <meta name="description" content="Portfolio profesional de José Acosta, Ingeniero de Software, especialista en desarrollo full stack, análisis de sistemas, hacking ético y programación Android/Java. Descubre experiencia, proyectos y contacto.">
-  <meta name="author" content="José Acosta">
-  <meta name="keywords" content="software engineer, systems analysis, ethical hacking, android programming, java programming, portfolio, paraguay, josé acosta, acrajovi, cv, desarrollador, full stack, frontend, backend, contacto, experiencia, proyectos">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-  <meta property="og:title" content="José Acosta | Software Engineer Portfolio">
-  <meta property="og:description" content="Portfolio profesional de José Acosta - Ingeniero de Software, Full Stack, especialista en análisis de sistemas y desarrollo Android/Java.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://acrajovi.bio.com.py"> 
-  <meta property="og:image" content="https://acrajovi.bio.com.py/assets/profile-pic.png">
-  <meta property="og:locale" content="es_ES"> 
-  <meta name="copyright" content="© 2025 José Acosta">
-  <meta name="theme-color" content="#374151">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="José Acosta | Software Engineer Portfolio">
-  <meta name="twitter:description" content="Portfolio profesional de José Acosta, Ingeniero de Software, Full Stack, Android/Java.">
-  <meta name="twitter:image" content="https://acrajovi.bio.com.py/assets/profile-pic.png">
-
+    <meta name="description" content="Portfolio - José Acosta, Software Engineer">
+    <meta name="theme-color" content="#0a0a0f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-    <body>
-      <nav id="desktop-nav">        
-        <div class="my-name"><a href="#" class="no-underline">José Acosta</a></div>
-            <div>
-                <ul class="nav-links">
-                    <li><a id="nav-home" href="#profile">Home</a></li>
-                    <li><a id="nav-about" href="#about">About</a></li>
-                    <li><a id="nav-experience" href="#experience">Experience</a></li>
-                    <li><a id="nav-contact" href="#contact">Contact</a></li>
-                    <li>
-                      <button onclick="toggleDarkMode()" class="theme-toggle">
-                        <svg width="24" height="24" id="light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <circle cx="12" cy="12" r="5"/>
-                          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">JA<span class="dot">.</span></a>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link" data-en="Home" data-es="Inicio">Home</a></li>
+            <li><a href="#about" class="nav-link" data-en="About" data-es="Sobre Mí">About</a></li>
+            <li><a href="#experience" class="nav-link" data-en="Skills" data-es="Habilidades">Skills</a></li>
+            <li><a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-btn" onclick="toggleDarkMode()" aria-label="Toggle theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <label class="lang-switch">
+                <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()">
+                <span class="slider"></span>
+                <span class="lang-text en">EN</span>
+                <span class="lang-text es">ES</span>
+            </label>
+        </div>
+        <button class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#home" onclick="toggleMenu()" data-en="Home" data-es="Inicio">Home</a>
+        <a href="#about" onclick="toggleMenu()" data-en="About" data-es="Sobre Mí">About</a>
+        <a href="#experience" onclick="toggleMenu()" data-en="Skills" data-es="Habilidades">Skills</a>
+        <a href="#contact" onclick="toggleMenu()" data-en="Contact" data-es="Contacto">Contact</a>
+        <div class="mobile-menu-actions">
+            <button class="theme-btn" onclick="toggleDarkMode()" aria-label="Toggle theme">
+                <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                </svg>
+                <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <label class="lang-switch">
+                <input type="checkbox" id="lang-toggle-mobile" onchange="toggleLanguage()">
+                <span class="slider"></span>
+                <span class="lang-text en">EN</span>
+                <span class="lang-text es">ES</span>
+            </label>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting" data-en="Hello, I'm" data-es="Hola, soy">Hello, I'm</p>
+                <h1 class="hero-name">
+                    <span class="name">José Acosta</span>
+                    <span class="gradient-text" data-en="Software Engineer" data-es="Ingeniero de Software">Software Engineer</span>
+                </h1>
+                <p class="hero-location" data-en="From Paraguay 🇵🇾" data-es="De Paraguay 🇵🇾">From Paraguay 🇵🇾</p>
+                <p class="hero-desc" data-en="Full Stack Developer with 13+ years of experience building modern web applications, mobile apps, and elegant solutions." data-es="Desarrollador Full Stack con 13+ años de experiencia creando aplicaciones web modernas, apps móviles y soluciones elegantes.">Full Stack Developer with 13+ years of experience building modern web applications, mobile apps, and elegant solutions.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn btn-primary">
+                        <span data-en="Let's Talk" data-es="Hablemos">Let's Talk</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                         </svg>
-                        <svg width="24" height="24" id="dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </a>
+                    <a href="./assets/CurriculumVitaeActualizado-EN.pdf" target="_blank" class="btn btn-secondary cv-btn" data-cv-en="./assets/CurriculumVitaeActualizado-EN.pdf" data-cv-es="./assets/CurriculumVitaeActualizado-ES.pdf">
+                        <span data-en="Download CV" data-es="Descargar CV">Download CV</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                         </svg>
-                      </button>
-                    </li>
-                    <li>
-                      <div class="switch">
-                        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox" onchange="toggleLanguage()">
-                        <label for="language-toggle"></label>
-                        <span class="on">EN</span>
-                        <span class="off">ES</span>
-                      </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <nav id="hamburger-nav">
-          <div class="my-name"><a href="#" class="no-underline">José Acosta</a></div>
-            <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    </a>
                 </div>
-                <div class="menu-links">
-                    <li><a href="#profile" onclick="toggleMenu()">Home</a></li>
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-                    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                    <li class="center">
-                      <button onclick="toggleDarkMode()" class="theme-toggle">
-                        <svg width="24" height="24" id="light-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <circle cx="12" cy="12" r="5"/>
-                          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-                        </svg>
-                        <svg width="24" height="24" id="dark-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                        </svg>
-                      </button>
-                    </li>
-                    <li class="center">
-                      <div class="switch">
-                        <input id="language-toggle-mobile" class="check-toggle check-toggle-round-flat" type="checkbox" onchange="toggleLanguage()">
-                        <label for="language-toggle-mobile"></label>
-                        <span class="on">EN</span>
-                        <span class="off">ES</span>
-                      </div>
-                    </li>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/acrajovi/" target="_blank" class="social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://github.com/acrajovi" target="_blank" class="social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://play.google.com/store/apps/dev?id=6375143936309552759" target="_blank" class="social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.198l2.807 1.626a1 1 0 0 1 0 1.73l-2.808 1.626L15.206 12l2.492-2.491zM5.864 2.658L16.8 8.99l-2.302 2.302-8.634-8.634z"/></svg>
+                    </a>
                 </div>
             </div>
-        </nav>
-        <section id="profile">
-            <div class="section__pic-container">
-                    <img src="./assets/profile-pic.png" alt="José Acosta profile picture"/>
-            </div>
-            <div class="section__text">
-                <p class="section__text__p1">Hello, I'm</p>
-                <h1 class="title">José Acosta</h1>
-                <p class="section__text__p2" data-original="Sr. Software Engineer"></p>
-                <p class="section__text__p3" data-original="From Paraguay"></p>
-                <div class="btn-container">
-                    <button
-                    class="btn btn-color-2"
-                    onclick="window.open('./assets/CurriculumVitaeActualizado-ES.pdf')"
-                    >
-                    Download CV spanish
-                    </button>
-                    <button
-                    class="btn btn-color-2"
-                    onclick="window.open('./assets/CurriculumVitaeActualizado-EN.pdf')"
-                    >
-                    Download CV english
-                    </button>
-                    <button
-                    class="btn btn-color-1 "
-                    onclick="location.href='./#contact'"
-                    >
-                    Contact Info
-                    </button>
-                </div>
-                <div id="socials-container">
-                  <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="window.open('https://www.linkedin.com/in/acrajovi/', '_blank')">
-                  <img src="./assets/github.png" alt="My GitHub profile" class="icon" onclick="window.open('https://github.com/acrajovi', '_blank')">
-                  <img src="./assets/playStorel.png" alt="My Play Store profile" class="icon" onclick="window.open('https://play.google.com/store/apps/dev?id=6375143936309552759', '_blank')">
-              </div>              
-            </div>
-            <!-- Arrow icon eliminado -->
-        </section>
-        <section id="about">
-            <p class="section__text__p1">Get to know More</p>
-            <h1 class="title">About Me</h1>
-            <div class="section-container">
-                <div class="section__pic-container">
-                    <img 
-                        src="./assets/portada.jpeg"
-                        alt="Profile picture"
-                        class="about-pic"
-                    />
-                </div>
-                <div class="about-details-container">
-                    <div class="about-containers">
-                        <div class="details-container">
-                            <img 
-                            src="./assets/experience.png" 
-                            alt="Experience icon"
-                            class="icon"
-                            />
-                            <h3>Experience </h3>
-                            <p>13+ years <br>Full stack Development </p>
+            <div class="hero-visual">
+                <div class="profile-card">
+                    <div class="profile-img-container">
+                        <img src="./assets/profile-pic.png" alt="José Acosta" class="profile-img">
+                        <div class="profile-ring"></div>
+                    </div>
+                    <div class="floating-badges">
+                        <div class="badge badge-1">
+                            <span class="code">&lt;/&gt;</span>
                         </div>
-                        <div class="details-container">
-                            <img 
-                            src="./assets/education.png" 
-                            alt="Education icon"
-                            class="icon"
-                            />
-                            <h3>Education</h3>
-                            <p>
-                              Software Engineer
-                            <br>
-                              Bachelor's Degree in Systems Analysis.
-                            <br>
-                              Diplomas in Java and Android Programming</p>
+                        <div class="badge badge-2">
+                            <span class="code">{ }</span>
+                        </div>
+                        <div class="badge badge-3">
+                            <span class="code">⚡</span>
                         </div>
                     </div>
-                    <div class="text-container">
-                      <p>Software Engineer, Graduate in computer systems analysis. Ethical Hacking Courses, Android Development Specialist, Diploma in Java Programming</p>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <p class="section-label" data-en="Get to know" data-es="Conoce">Get to know</p>
+            <h2 class="section-title" data-en="About Me" data-es="Sobre Mí">About Me</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-image-col">
+                <div class="about-img-wrapper">
+                    <img src="./assets/portada.jpeg" alt="About José">
+                    <div class="about-img-decoration"></div>
+                </div>
+            </div>
+            <div class="about-content-col">
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <span class="stat-number">13+</span>
+                        <span class="stat-label" data-en="Years Experience" data-es="Años Exp">Years Experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label" data-en="Projects" data-es="Proyectos">Projects</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label" data-en="Clients" data-es="Clientes">Clients</span>
                     </div>
                 </div>
-            </div>
-            <!-- Arrow icon eliminado -->
-        </section>
-        <section id="experience">
-            <p class="section__text__p1">Explore My</p>
-            <h1 class="title">Experience</h1>
-            <div class="experience-details-container">
-              <div class="about-containers">
-                <div class="details-container">
-                  <h2 class="experience-sub-title">Frontend Development</h2>
-                  <div class="article-container">
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>HTML</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>CSS</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>JavaScript</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Material UI</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>React JS</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Angular</h3>
-                        <p>Intermediate</p>
-                      </div>
-                    </article>
-                  </div>
+                <p class="about-text" data-en="I'm a passionate Software Engineer with a Bachelor's degree in Systems Analysis. Specialized in Android Development, Java Programming, and Ethical Hacking. I love building scalable solutions and continuously learning new technologies to deliver exceptional digital experiences." data-es="Soy un apasionado Ingeniero de Sistemas con Licenciatura en Análisis de Sistemas. Especializado en Desarrollo Android, Programación Java y Hacking Ético. Me encanta construir soluciones escalables y aprender continuamente nuevas tecnologías para entregar experiencias digitales excepcionales.">I'm a passionate Software Engineer with a Bachelor's degree in Systems Analysis. Specialized in Android Development, Java Programming, and Ethical Hacking. I love building scalable solutions and continuously learning new technologies to deliver exceptional digital experiences.</p>
+                <div class="about-tags">
+                    <span class="tag">Android</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Spring</span>
+                    <span class="tag">Ethical Hacking</span>
+                    <span class="tag">Full Stack</span>
                 </div>
-                <div class="details-container">
-                  <h2 class="experience-sub-title">Backend Development</h2>
-                  <div class="article-container">
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>PostgreSQL</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>MySQL</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>JAVA</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Spring</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Express JS</h3>
-                        <p>Intermediate</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>PHP</h3>
-                        <p>Intermediate</p>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="details-container">
-                  <h2 class="experience-sub-title">Others Skills</h2>
-                  <div class="article-container">
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Android</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Ethical Hacking</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Git</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>APIs</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>Microservices</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                    <article>
-                      <img
-                        src="./assets/checkmark.png"
-                        alt="Experience icon"
-                        class="icon"
-                      />
-                      <div>
-                        <h3>MicroFrontEnds</h3>
-                        <p>Experienced</p>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
-              <div class="text-container">
-                <p>Full Stack
-                  Developer with more than 13 years
-                  of experience in developing
-                  Desktop/web computer systems
-                  (FrontEnd and BackEnd) APIS,
-                  Android mobile applications, Web
-                  pages, Database management,
-                  servers, version control,
-                  management of activities of
-                  programmers and Ethical Hacking
-                  consultancy.</p>
-              </div>
             </div>
-            <!-- Arrow icon eliminado -->
-          </section>
-          <section id="contact">
-            <p class="section__text__p1">Get in Touch</p>
-            <h1 class="title">Contact Me</h1>
-            <div class="contact-info-upper-container">
-              <div class="contact-info-container">
-                <img
-                  src="./assets/email.png"
-                  alt="Email icon"
-                  class="icon contact-icon email-icon"
-                />
-                <p><a href="mailto:acrajovi@gmail.com">acrajovi@gmail.com</a></p>
-              </div>
-              <div class="contact-info-container">
-                <img
-                  src="./assets/linkedin.png"
-                  alt="LinkedIn icon"
-                  class="icon contact-icon"
-                />
-                <p><a href="https://www.linkedin.com/in/acrajovi/" target="_blank">LinkedIn</a></p>
-            </div>            
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="experience" class="skills-section">
+        <div class="section-header">
+            <p class="section-label" data-en="My expertise" data-es="Mi experiencia">My expertise</p>
+            <h2 class="section-title" data-en="Skills & Experience" data-es="Habilidades">Skills & Experience</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h3 data-en="Frontend" data-es="Frontend">Frontend</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-bar"><span class="skill-name">HTML/CSS</span><div class="bar"><div class="fill" style="--w:95%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">JavaScript</span><div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">React</span><div class="bar"><div class="fill" style="--w:85%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Angular</span><div class="bar"><div class="fill" style="--w:70%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Material UI</span><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+                </div>
             </div>
-          </section>
-          <footer>
-            <nav>
-              <div class="nav-links-container">
-                <ul class="nav-links">
-                  <li><a href="#profile">Home</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="#experience">Experience</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>
-              </div>
-            </nav>
-            <p>Copyright &#169; <span id="currentYear"></span> José Acosta. All Rights Reserved.</p>
-          </footer>
-  <script src="translation.js?v=20250821"></script>
-  <script src="script.js?v=20250821"></script>
-        <!-- Botón para volver al inicio -->
-      <button id="back-to-top" class="back-to-top" title="Volver al inicio">
-        ↑
-      </button>
-    </body>
+            <div class="skill-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 data-en="Backend" data-es="Backend">Backend</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-bar"><span class="skill-name">Java</span><div class="bar"><div class="fill" style="--w:92%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Spring</span><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">PostgreSQL</span><div class="bar"><div class="fill" style="--w:85%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">MySQL</span><div class="bar"><div class="fill" style="--w:85%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Node.js</span><div class="bar"><div class="fill" style="--w:75%"></div></div></div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3 data-en="Other Skills" data-es="Otras Habilidades">Other Skills</h3>
+                </div>
+                <div class="skill-items">
+                    <div class="skill-bar"><span class="skill-name">Android</span><div class="bar"><div class="fill" style="--w:90%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Ethical Hacking</span><div class="bar"><div class="fill" style="--w:80%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Git</span><div class="bar"><div class="fill" style="--w:92%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">APIs / Microservices</span><div class="bar"><div class="fill" style="--w:88%"></div></div></div>
+                    <div class="skill-bar"><span class="skill-name">Docker</span><div class="bar"><div class="fill" style="--w:70%"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-header">
+            <p class="section-label" data-en="Get in touch" data-es="Escríbeme">Get in touch</p>
+            <h2 class="section-title" data-en="Contact Me" data-es="Contáctame">Contact Me</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card" onclick="window.location.href='mailto:acrajovi@gmail.com'">
+                <div class="contact-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <h3>Email</h3>
+                <p>acrajovi@gmail.com</p>
+                <span class="contact-link" data-en="Send message" data-es="Enviar mensaje">Send message</span>
+            </div>
+            <div class="contact-card" onclick="window.open('https://www.linkedin.com/in/acrajovi/', '_blank')">
+                <div class="contact-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </div>
+                <h3>LinkedIn</h3>
+                <p>@acrajovi</p>
+                <span class="contact-link" data-en="Connect" data-es="Conectar">Connect</span>
+            </div>
+            <div class="contact-card" onclick="window.open('https://github.com/acrajovi', '_blank')">
+                <div class="contact-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </div>
+                <h3>GitHub</h3>
+                <p>@acrajovi</p>
+                <span class="contact-link" data-en="Follow" data-es="Seguir">Follow</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <a href="#" class="logo">JA<span class="dot">.</span></a>
+            <p>&copy; <span id="year"></span> José Acosta. <span data-en="All rights reserved" data-es="Todos los derechos reservados">All rights reserved</span>.</p>
+            <div class="footer-links">
+                <a href="#home" data-en="Home" data-es="Inicio">Home</a>
+                <a href="#about" data-en="About" data-es="Sobre Mí">About</a>
+                <a href="#experience" data-en="Skills" data-es="Habilidades">Skills</a>
+                <a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" onclick="scrollToTop()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <script src="./script.js?v=1"></script>
+</body>
 </html>
