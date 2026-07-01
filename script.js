@@ -18,22 +18,47 @@ if (savedTheme === 'light') {
 // Set year
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Nav link & scroll elements
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
 // Scroll effects
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     const backToTop = document.querySelector('.back-to-top');
+    const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop;
     
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+    if (navbar) {
+        if (scrollTop > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
     
-    if (window.scrollY > 400) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
+    if (backToTop) {
+        if (scrollTop > 400) {
+            backToTop.classList.add('visible');
+        } else {
+            backToTop.classList.remove('visible');
+        }
     }
+    
+    // Active navigation highlighting
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (scrollTop >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
     
     // Animate skill bars on scroll
     animateSkillBars();
@@ -107,29 +132,7 @@ document.querySelectorAll('.skill-bar .fill').forEach(bar => {
 // Initial animation trigger
 setTimeout(animateSkillBars, 500);
 
-// Nav link active state
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (scrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
 
 // Language Toggle & Persistence
 const savedLang = localStorage.getItem('lang');
