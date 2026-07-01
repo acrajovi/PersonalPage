@@ -134,15 +134,14 @@ window.addEventListener('scroll', () => {
 // Language Toggle
 let currentLang = 'en';
 function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    const isChecked = currentLang === 'es';
+    
     const desktopToggle = document.getElementById('lang-toggle');
     const mobileToggle = document.getElementById('lang-toggle-mobile');
     
-    // Sincronizar ambos toggles
-    const isChecked = desktopToggle ? desktopToggle.checked : (mobileToggle ? mobileToggle.checked : false);
     if (desktopToggle) desktopToggle.checked = isChecked;
     if (mobileToggle) mobileToggle.checked = isChecked;
-    
-    currentLang = isChecked ? 'es' : 'en';
     
     // Update all translatable elements
     const elements = document.querySelectorAll('[data-en][data-es]');
