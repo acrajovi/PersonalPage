@@ -9,6 +9,20 @@
     <link rel="icon" type="image/png" href="./assets/favicon.png">
     <meta name="description" content="Portfolio - José Acosta, Software Engineer">
     <meta name="theme-color" content="#0a0a0f">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="José Acosta | Software Engineer">
+    <meta property="og:description" content="Desarrollador Full Stack con 13+ años de experiencia. Especialista en Android, Java, Ethical Hacking y soluciones Full Stack.">
+    <meta property="og:image" content="https://acrajovi.bio.com.py/assets/portada.jpeg">
+    <meta property="og:url" content="https://acrajovi.bio.com.py">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="José Acosta | Software Engineer">
+    <meta name="twitter:description" content="Desarrollador Full Stack con 13+ años de experiencia. Especialista en Android, Java, Ethical Hacking y soluciones Full Stack.">
+    <meta name="twitter:image" content="https://acrajovi.bio.com.py/assets/portada.jpeg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -41,7 +55,7 @@
                 </svg>
             </button>
             <label class="lang-switch">
-                <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()">
+                <input type="checkbox" id="lang-toggle" onchange="toggleLanguage()" aria-label="Cambiar idioma / Change language">
                 <span class="slider"></span>
                 <span class="lang-text en">EN</span>
                 <span class="lang-text es">ES</span>
@@ -68,7 +82,7 @@
                 </svg>
             </button>
             <label class="lang-switch">
-                <input type="checkbox" id="lang-toggle-mobile" onchange="toggleLanguage()">
+                <input type="checkbox" id="lang-toggle-mobile" onchange="toggleLanguage()" aria-label="Cambiar idioma / Change language">
                 <span class="slider"></span>
                 <span class="lang-text en">EN</span>
                 <span class="lang-text es">ES</span>
@@ -116,7 +130,7 @@
             <div class="hero-visual">
                 <div class="profile-card">
                     <div class="profile-img-container">
-                        <img src="./assets/profile-pic.png" alt="José Acosta" class="profile-img">
+                        <img src="./assets/profile-pic.png" alt="José Acosta" class="profile-img" width="917" height="1075">
                         <div class="profile-ring"></div>
                     </div>
                     <div class="floating-badges">
@@ -150,7 +164,7 @@
         <div class="about-grid">
             <div class="about-image-col">
                 <div class="about-img-wrapper">
-                    <img src="./assets/portada.jpeg" alt="About José">
+                    <img src="./assets/portada.jpeg" alt="About José" width="1400" height="350">
                     <div class="about-img-decoration"></div>
                 </div>
             </div>

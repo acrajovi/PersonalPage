@@ -131,12 +131,13 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Language Toggle
-let currentLang = 'en';
-function toggleLanguage() {
-    currentLang = currentLang === 'en' ? 'es' : 'en';
+// Language Toggle & Persistence
+const savedLang = localStorage.getItem('lang');
+const browserLang = navigator.language && navigator.language.startsWith('es') ? 'es' : 'en';
+let currentLang = savedLang || browserLang;
+
+function applyLanguage() {
     const isChecked = currentLang === 'es';
-    
     const desktopToggle = document.getElementById('lang-toggle');
     const mobileToggle = document.getElementById('lang-toggle-mobile');
     
@@ -156,3 +157,12 @@ function toggleLanguage() {
         cvBtn.href = cvUrl;
     }
 }
+
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'es' : 'en';
+    localStorage.setItem('lang', currentLang);
+    applyLanguage();
+}
+
+// Initial language load
+applyLanguage();
