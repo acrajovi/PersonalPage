@@ -169,3 +169,16 @@ function toggleLanguage() {
 
 // Initial language load
 applyLanguage();
+
+// Interactive Cursor Glow (Desktop only)
+const cursorGlow = document.getElementById('cursor-glow');
+if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+    document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.opacity = '1';
+        cursorGlow.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate3d(-50%, -50%, 0)`;
+    });
+    
+    document.addEventListener('mouseleave', () => {
+        cursorGlow.style.opacity = '0';
+    });
+}

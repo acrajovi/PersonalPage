@@ -38,6 +38,7 @@ body {
     color: var(--primary);
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -59,6 +60,7 @@ a {
     pointer-events: none;
     z-index: -1;
     overflow: hidden;
+    transition: opacity 0.5s ease;
 }
 
 .gradient-orb {
@@ -67,6 +69,7 @@ a {
     filter: blur(100px);
     opacity: 0.5;
     animation: float 20s ease-in-out infinite;
+    transition: opacity 0.5s ease;
 }
 
 .orb-1 {
@@ -113,6 +116,25 @@ a {
         linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+}
+
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    will-change: transform;
+}
+
+body.light .cursor-glow {
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
 }
 
 /* ===== NAVIGATION ===== */
